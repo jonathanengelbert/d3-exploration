@@ -1,0 +1,11 @@
+.d3-component {
+  border: 2px solid red;
+}
+
+.bar {
+
+  &:hover {
+    fill: cornflowerblue;
+  }
+}
+
