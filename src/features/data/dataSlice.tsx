@@ -1,36 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface DataState {
-  data: number[];
+    data: number[];
 }
 
 const initialState: DataState = {
-  data: [12, 31, 22, 17, 25, 18, 29, 14, 9, 60],
+    data: [12, 31, 22, 17, 25, 18, 29, 14, 9, 60],
 };
 
 export const dataSlice = createSlice({
-  name: 'data',
-  initialState,
-  reducers: {
-    addData: (state, action) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.data = [
-          ...state.data,
-          action.payload
+    name: 'data',
+    initialState,
+    reducers: {
+        addData: (state, action) => {
+            // Redux Toolkit allows us to write "mutating" logic in reducers. It
+            // doesn't actually mutate the state because it uses the Immer library,
+            // which detects changes to a "draft state" and produces a brand new
+            // immutable state based off those changes
+            state.data = [
+                ...state.data,
+                action.payload
 
-      ]
+            ]
+        },
+        //   decrement: state => {
+        //     state.value -= 1;
+        //   },
+        //   // Use the PayloadAction type to declare the contents of `action.payload`
+        //   incrementByAmount: (state, action: PayloadAction<number>) => {
+        //     state.value += action.payload;
+        //   },
     },
-  //   decrement: state => {
-  //     state.value -= 1;
-  //   },
-  //   // Use the PayloadAction type to declare the contents of `action.payload`
-  //   incrementByAmount: (state, action: PayloadAction<number>) => {
-  //     state.value += action.payload;
-  //   },
-  },
 });
 
 export const {addData} = dataSlice.actions;

@@ -1,8 +1,8 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 import './barChartStyles.scss';
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 
 interface IProps {
     data?: number[]
@@ -55,13 +55,13 @@ export default function BarChart() {
     });
 
     return (
-            <svg
-                className='d3-component'
-                width={'50%'}
-                height={500}
-                ref={d3Container}
-            >
-            </svg>
+        <svg
+            className='d3-component'
+            width={'50%'}
+            height={500}
+            ref={d3Container}
+        >
+        </svg>
     )
 };
 

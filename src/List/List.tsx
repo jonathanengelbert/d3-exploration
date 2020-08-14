@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import './listStyles.scss';
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 interface IList {
     data?: any
@@ -11,7 +11,6 @@ export default function List(props: IList) {
     const data = useSelector((state: any) => state.data.data);
     const [currentInput, setCurrentInput] = useState<number | null>(null);
     const dispatch = useDispatch();
-
 
 
     let items = <p>No items available</p>
@@ -29,8 +28,8 @@ export default function List(props: IList) {
     }
 
     const addData = () => {
-        if(currentInput){
-            dispatch({type:'data/addData', payload: currentInput});
+        if (currentInput) {
+            dispatch({type: 'data/addData', payload: currentInput});
         }
         return null;
     };
